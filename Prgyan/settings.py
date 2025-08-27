@@ -139,3 +139,13 @@ AUTH_USER_MODEL = 'users.CustomUser'
 STATICFILES_DIRS = [
     # Remove or correct the invalid path
 ]
+
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# Optional but recommended for Render + WhiteNoise
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
